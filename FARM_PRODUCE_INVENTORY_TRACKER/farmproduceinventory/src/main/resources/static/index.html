@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmStock - Produce Inventory Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div>
+        <h1>FarmStock</h1>
+        <p>Farmer's Produce Inventory Tracker</p>
+    </div>
+    <button onclick="loadCrops()">Refresh</button>
+</header>
+
+<main>
+    <section class="grid">
+        <div class="card">
+            <h2>Add Crop</h2>
+            <form id="cropForm">
+                <input id="cropName" placeholder="Crop name (e.g. Tomato)" required>
+                <input id="category" placeholder="Category (e.g. Vegetable)">
+                <input id="unit" placeholder="Unit (kg / bags / crates)" required>
+                <button type="submit">Save Crop</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Log Harvest</h2>
+            <form id="harvestForm">
+                <select id="harvestCrop" required></select>
+                <input id="harvestQty" type="number" min="0.01" step="0.01" placeholder="Quantity" required>
+                <input id="harvestDate" type="date" required>
+                <button type="submit">Add Harvest</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Record Sale</h2>
+            <form id="saleForm">
+                <select id="saleCrop" required></select>
+                <input id="saleQty" type="number" min="0.01" step="0.01" placeholder="Quantity" required>
+                <input id="price" type="number" min="0" step="0.01" placeholder="Price per unit" required>
+                <input id="saleDate" type="date" required>
+                <button type="submit">Record Sale</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Current Stock</h2>
+        <div id="stockList" class="stock-grid"></div>
+    </section>
+
+    <section class="card">
+        <h2>Revenue Report</h2>
+        <div class="report-row">
+            <select id="reportCrop"></select>
+            <input id="fromDate" type="date">
+            <input id="toDate" type="date">
+            <button onclick="getRevenue()">Calculate Revenue</button>
+        </div>
+        <div id="revenueResult" class="result">Select a crop and date range.</div>
+    </section>
+
+    <div id="message" class="message"></div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

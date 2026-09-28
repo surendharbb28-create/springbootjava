@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f7f2; color: #1f2a20; }
+header { background: #285943; color: white; padding: 22px 6%; display: flex; justify-content: space-between; align-items: center; }
+header h1 { margin: 0 0 5px; }
+header p { margin: 0; opacity: .9; }
+main { width: min(1100px, 92%); margin: 25px auto 50px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 18px; box-shadow: 0 3px 15px rgba(0,0,0,.07); }
+h2 { margin-top: 0; font-size: 20px; }
+form { display: grid; gap: 10px; }
+input, select, button { width: 100%; padding: 11px; border-radius: 8px; border: 1px solid #ccd6cd; font-size: 14px; }
+button { background: #285943; color: white; border: none; cursor: pointer; font-weight: bold; }
+button:hover { opacity: .9; }
+.stock-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.stock-item { border: 1px solid #dce6dd; border-radius: 10px; padding: 15px; background: #fbfdfb; }
+.stock-item strong { display: block; font-size: 17px; margin-bottom: 8px; }
+.stock-number { font-size: 26px; font-weight: bold; }
+.report-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; }
+.result { margin-top: 15px; padding: 15px; background: #eef6ef; border-radius: 8px; font-weight: bold; }
+.message { position: fixed; right: 20px; bottom: 20px; padding: 14px 18px; border-radius: 8px; background: #285943; color: white; display: none; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .report-row { grid-template-columns: 1fr; } }
